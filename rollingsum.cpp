@@ -3,16 +3,10 @@
 rollingsum::rollingsum(int cap) {
     if (cap > 0) {
         capacity = cap;
-        elements = new int[cap];
+        elements = std::make_unique<int[]>(cap);
         count = 0;
         next_index = 0;
         total = 0;
-    }
-}
-
-rollingsum::~rollingsum() {
-    if (elements) {
-        delete[] elements;
     }
 }
 
