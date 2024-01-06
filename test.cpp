@@ -17,31 +17,31 @@ TEST_CASE( "One element is easy to test" ) {
 
 TEST_CASE( "Three elements should have the latest sum" ) {
     rollingsum r3 = rollingsum(3);
-    r3.add(2);
+    r3 << 2;
     REQUIRE( r3.size() == 1 );
     REQUIRE( r3.sum() == 2 );
 
-    r3.add(5);
+    r3 << 5;
     REQUIRE( r3.size() == 2 );
     REQUIRE( r3.sum() == 7 );
 
-    r3.add(10);
+    r3 << 10;
     REQUIRE( r3.size() == 3 );
     REQUIRE( r3.sum() == 17 );
 
-    r3.add(4);
+    r3 << 4;
     REQUIRE( r3.size() == 3 );
     REQUIRE( r3.sum() == 19 );
 
-    r3.add(9);
+    r3 << 9;
     REQUIRE( r3.size() == 3 );
     REQUIRE( r3.sum() == 23 );
 
-    r3.add(8);
+    r3 << 8;
     REQUIRE( r3.size() == 3 );
     REQUIRE( r3.sum() == 21 );
 
-    r3.add(203);
+    r3 << 203;
     REQUIRE( r3.size() == 3 );
     REQUIRE( r3.sum() == 220 );
 }

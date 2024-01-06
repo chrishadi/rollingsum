@@ -9,6 +9,7 @@ class rollingsum {
     void add(int);
     int size() { return count; };
     int sum() { return total; };
+    void operator<<(int);
 
     private:
     std::unique_ptr<int[]> elements;

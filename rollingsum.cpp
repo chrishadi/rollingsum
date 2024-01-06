@@ -28,3 +28,7 @@ void rollingsum::add(int num) {
 
     total += num;
 }
+
+void rollingsum::operator<<(int num) {
+    add(num);
+}
