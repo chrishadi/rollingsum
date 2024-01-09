@@ -6,10 +6,10 @@
 class rollingsum {
     public:
     rollingsum(int);
-    void add(int);
+    int add(int);
     int size() { return count; };
     int sum() { return total; };
-    void operator<<(int);
+    int operator<<(int);
 
     private:
     std::unique_ptr<int[]> elements;

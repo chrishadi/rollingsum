@@ -10,9 +10,9 @@ rollingsum::rollingsum(int cap) {
     }
 }
 
-void rollingsum::add(int num) {
+int rollingsum::add(int num) {
     if (!elements) {
-        return;
+        return 0;
     }
 
     if (count == capacity) {
@@ -27,8 +27,9 @@ void rollingsum::add(int num) {
     }
 
     total += num;
+    return total;
 }
 
-void rollingsum::operator<<(int num) {
-    add(num);
+int rollingsum::operator<<(int num) {
+    return add(num);
 }
