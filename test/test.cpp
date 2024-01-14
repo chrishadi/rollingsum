@@ -1,5 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
-#include "rollingsum.h"
+#include "rollingsum.hpp"
 
 TEST_CASE( "One element is easy to test" ) {
     rollingsum r1 = rollingsum(1);
@@ -15,7 +15,7 @@ TEST_CASE( "One element is easy to test" ) {
     REQUIRE( r1.sum() == 5 );
 }
 
-TEST_CASE( "Three elements should have the latest sum" ) {
+TEST_CASE( "Three elements should have correct rolling sum" ) {
     rollingsum r3 = rollingsum(3);
     REQUIRE( (r3 << 2) == 2 );
     REQUIRE( r3.size() == 1 );

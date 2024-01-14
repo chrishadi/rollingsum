@@ -7,8 +7,8 @@ class rollingsum {
     public:
     rollingsum(int);
     int add(int);
-    int size() { return count; };
-    int sum() { return total; };
+    int size();
+    int sum();
     int operator<<(int);
 
     private:

@@ -1,4 +1,4 @@
-#include "rollingsum.h"
+#include "rollingsum.hpp"
 
 rollingsum::rollingsum(int cap) {
     if (cap > 0) {
@@ -27,6 +27,14 @@ int rollingsum::add(int num) {
     }
 
     total += num;
+    return total;
+}
+
+int rollingsum::size() {
+    return count;
+}
+
+int rollingsum::sum() {
     return total;
 }
 

@@ -1,0 +1,2 @@
+#define rollingsum_VERSION_MAJOR @rollingsum_VERSION_MAJOR@
+#define rollingsum_VERSION_MINOR @rollingsum_VERSION_MINOR@

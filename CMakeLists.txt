@@ -1,25 +1,20 @@
 cmake_minimum_required(VERSION 3.28.1)
 
-project(rollingsum)
+project(rollingsum VERSION 1.0)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_library(rollingsum rollingsum.cpp rollingsum.h)
+configure_file(rollingsum.h.in rollingsum.h)
 
-include(FetchContent)
+add_library(${PROJECT_NAME} src/rollingsum.cpp)
 
-FetchContent_Declare(
-  Catch2
-  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-  GIT_TAG        v3.5.1 # or a later release
+target_sources(${PROJECT_NAME} PRIVATE src/rollingsum.cpp)
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+  "${PROJECT_BINARY_DIR}"
+  "${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}"
 )
 
-FetchContent_MakeAvailable(Catch2)
+add_subdirectory(test)
 
-add_executable(tests test.cpp)
-target_link_libraries(tests PRIVATE rollingsum Catch2::Catch2WithMain)
-
-include(CTest)
-include(Catch)
-catch_discover_tests(tests)

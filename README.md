@@ -8,12 +8,9 @@ From the project's root directory, run below commands:
 cmake -S . -B <build_directory>
 cmake --build <build_directory>
 
-ctest --test-dir <build_directory>
-# or
-cd <build-directory>
-make test
+ctest --test-dir <build_directory>/test
 ```
 
 ### TODO:
-- use standard C++ project structure for library -> [ref](https://stackoverflow.com/questions/13521618/c-project-organisation-with-gtest-cmake-and-doxygen)
-- tidy the tests
+- ☑ use standard C++ project structure for library ([ref](https://stackoverflow.com/questions/13521618/c-project-organisation-with-gtest-cmake-and-doxygen))
+- ☐ tidy the tests (should we?)
